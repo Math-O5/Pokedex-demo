@@ -6,7 +6,10 @@ export interface Pokemons {
 }
 
 export interface Pokemon {
-    id:         number;
     url:        string;
     name:       string;
+}
+
+export interface PokemonDetail {
+
 }
