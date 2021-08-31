@@ -1,0 +1,15 @@
+.header {
+    top: 0cm;
+    height: 5%;
+    text-align: left;
+    background-color: 0E61AD;
+    color: white;
+}
+
+.title {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.sub-title {
+    font-family: 'Times New Roman', Times, serif;
+}
