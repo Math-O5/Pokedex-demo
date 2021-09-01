@@ -9,16 +9,13 @@ import { Pokemons, Pokemon } from './pokemon';
 })
 export class PokedexService {
 
-  private readonly limit = 5
-  offset: number  = 0
   pagina: string  = ''
   private readonly API = `${environment.API}`
 
   constructor(private http: HttpClient) { }
 
-  list() {
-    this.pagina = this.API + `?limit=${this.limit}&offset=${this.offset}`
-    this.offset += this.limit
+  list(offset: number, limit: number) {
+    this.pagina = this.API + `?limit=${limit}&offset=${offset}`
     return this.http.get<Pokemons>(this.pagina)                     
   }
 

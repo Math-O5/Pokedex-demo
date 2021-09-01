@@ -1,7 +1,11 @@
 <div class="container">
-    <button type="button" class="btn btn-default" aria-label="Left Align">
-        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-    </button>      
+    <div class="m-4 d-flex justify-content-start">
+        <button type="button" class="btn btn-primary" aria-label="Left Align"
+        (click)="onClickBackPage()"
+        >
+            Voltar
+        </button>      
+    </div>
     <div class="card-group vgr-cards">
         <div *ngFor="let pokemon of detailPokemons; let id = index">
             <div class="card">
@@ -17,4 +21,11 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="m-4 d-flex justify-content-start">
+        <button type="button" class="btn btn-primary" aria-label="Left Align"
+        (click)="onClickNextPage()">
+            Seguinte
+        </button>      
+    </div>
 </div>
