@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
-import { PokemonDetail, Pokemons, Pokemon } from './pokemon';
+import { Pokemons, Pokemon } from './pokemon';
 
 @Injectable({
   providedIn: 'root'
@@ -14,18 +14,15 @@ export class PokedexService {
   pagina: string  = ''
   private readonly API = `${environment.API}`
 
-  pokemons : Pokemon[] = []; 
-  detailPokemons : PokemonDetail[] = [];
-
   constructor(private http: HttpClient) { }
 
   list() {
-    this.offset += this.limit
     this.pagina = this.API + `?limit=${this.limit}&offset=${this.offset}`
+    this.offset += this.limit
     return this.http.get<Pokemons>(this.pagina)                     
   }
 
   getDetails(pokemon : Pokemon) {
-    return this.http.get<Object>(pokemon.url)
+    return this.http.get<Array<any>>(pokemon.url)
   }
 }

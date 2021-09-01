@@ -9,7 +9,3 @@ export interface Pokemon {
     url:        string;
     name:       string;
 }
-
-export interface PokemonDetail {
-
-}

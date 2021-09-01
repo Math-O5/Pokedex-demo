@@ -1,18 +1,20 @@
 <div class="container">
+    <button type="button" class="btn btn-default" aria-label="Left Align">
+        <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+    </button>      
     <div class="card-group vgr-cards">
-        <div class="card">
-            <div class="float-left">
-                <h4>Pokemon Lista</h4>
+        <div *ngFor="let pokemon of detailPokemons; let id = index">
+            <div class="card">
+                <div class="card-img-body">
+                    <img class="card-img" src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
+                </div>
+                <div class="card-body">
+                    <p>#{{ pokemon.id }}</p>
+                    <h4 class="card-title">{{ pokemon.name }}</h4>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">{{pokemon.types[0]["type"].name}}</p>
+                    <a href="#" class="btn btn-primary">Detalhes</a>
+                </div>
             </div>
         </div>
-        <div class="card" *ngFor="let pokemon of detailPokemons; let id = index">
-            <div class="card-img-body">
-                <img class="card-img" src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
-            </div>
-            <div class="card-body">
-                <p>#{{ pokemon.id }}</p>
-                <h4 class="card-title">{{ pokemon.name }}</h4>
-                <a href="#" class="btn btn-outline-primary">Detalhes</a>
-            </div>
-    </div>
 </div>
