@@ -22,4 +22,8 @@ export class PokedexService {
   getDetails(pokemon : Pokemon) {
     return this.http.get<Array<any>>(pokemon.url)
   }
+
+  getById(id: string) {
+    return this.http.get<Array<any>>(this.API + id);
+  }
 }

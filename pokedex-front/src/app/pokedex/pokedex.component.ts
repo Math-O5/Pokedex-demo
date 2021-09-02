@@ -5,7 +5,7 @@ import { PokedexService } from './pokedex.service';
 @Component({
   selector: 'app-pokedex',
   templateUrl: './pokedex.component.html',
-  styleUrls: ['./pokedex.component.scss']
+  styleUrls: ['./pokedex.component.scss', '../app.component.scss']
 })
 export class PokedexComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class PokedexComponent implements OnInit {
   pokemons: Pokemon[] = [];
   detailPokemons : Array<any> = [];
 
-  constructor(private service: PokedexService) {   }
+  constructor(private servicePokedex: PokedexService) {   }
 
   ngOnInit(): void {
     this.updateListPokemon();
@@ -43,14 +43,15 @@ export class PokedexComponent implements OnInit {
 
   updateListPokemon() {
     // Retrieve a list of pokemons
-    this.service.list(this.offset, this.limit)
+    this.servicePokedex.list(this.offset, this.limit)
     .subscribe(pokemons => {this.pokemons = pokemons.results;
         // Retrieve a list for the previous found pokemons
         this.pokemons.forEach(pokemon => 
-                            this.service.getDetails(pokemon)
+                            this.servicePokedex.getDetails(pokemon)
                                         .subscribe(detailPokemon => {
-                                                    this.detailPokemons.push(detailPokemon); }
-                                                    )  
+                                                    this.detailPokemons.push(detailPokemon);
+                                                    console.log(detailPokemon) 
+                                                  })  
         )
     });
   }

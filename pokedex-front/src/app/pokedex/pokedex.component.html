@@ -7,20 +7,20 @@
         </button>      
     </div>
     <div class="card-group vgr-cards">
-        <div *ngFor="let pokemon of detailPokemons; let id = index">
-            <div class="card">
+        <div  
+            *ngFor="let pokemon of detailPokemons; let id = index">
+            <div
+                [ngClass]="['card', pokemon.types[0]['type'].name ]">
                 <div class="card-img-body">
                     <img class="card-img" src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
                 </div>
-                <!-- <a> -->
-                    <div class="card-body">
-                        <p>#{{ pokemon.id }}</p>
-                        <h4 class="card-title">{{ pokemon.name }}</h4>
-                        <p class="card-text">This card has supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This card has supporting text below as a natural lead-in to additional content.</p>
-                        <p class="card-text">{{pokemon.types[0]["type"].name}}</p>
-                        <a [routerLink]="['pokemon/', pokemon.id]" class="btn btn-primary">Detalhes</a>
-                    </div>
-                <!-- </a> -->
+                <div class="card-body">
+                    <p>#{{ pokemon.id }}</p>
+                    <h4 class="card-title">{{ pokemon.name }}</h4>
+                    <p class="card-text">This card has supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This card has supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">{{pokemon.types[0]["type"].name}}</p>
+                    <a [routerLink]="['pokemon/', pokemon.id]" class="btn btn-primary">Detalhes</a>
+                </div>
             </div>
         </div>
     </div>
