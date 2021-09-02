@@ -10,9 +10,29 @@
     </div>
     <div class="card-body">
         <p>#{{ pokemon.id }}</p>
-        <h4 class="card-title">{{ pokemon.name }}</h4>
+        <h3 class="card-title">{{ pokemon.name }}</h3>
         <div class="types" *ngFor="let type of pokemon.types">
             <p [ngClass]="['card-text', type['type'].name, 'highlight']">{{ type["type"].name }}</p>
         </div>
     </div>
 </div>
+<br>
+<h4>Informações básicas</h4>
+<div class="info">
+    <div>
+        <h5>Peso</h5>
+        <p class="info-text">{{ pokemon.weight }}Kg</p>
+    </div>
+    <div>
+        <h5>Altura</h5>
+        <p class="info-text">{{ pokemon.height }}Kg</p>
+    </div>
+    <div>
+        <h5>Habilidades</h5>
+        <div *ngFor="let ability of pokemon.abilities">
+            <p class="info-text">{{ ability.ability.name }}</p>
+        </div>
+    </div>
+</div>
+<h4>Informações básicas</h4>
+<p>Descrição do pokemon bla bla bla bla bla bla  bla bla bla  bla bla bla bla bla bla </p>

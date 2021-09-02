@@ -21,5 +21,14 @@
 }
 
 img {
-    width: 10%;
+    width: 15%;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-text {
+    font-size: 30px;
 }
