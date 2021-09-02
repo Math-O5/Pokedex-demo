@@ -1,1 +1,18 @@
-<p>pokedex-detalhe works!</p>
+<div [ngClass]="['card', pokemon.types[0]['type'].name]">
+    <div class="header">
+        <a [routerLink]="['/']" class="btn btn-primary">Back</a>
+        <img [src]='icon_type'>
+    </div>
+    
+    
+    <div class="card-img-body">
+        <img class="card-img" src="{{ pokemon.sprites.front_default }}" alt="{{ pokemon.name }}">
+    </div>
+    <div class="card-body">
+        <p>#{{ pokemon.id }}</p>
+        <h4 class="card-title">{{ pokemon.name }}</h4>
+        <div class="types" *ngFor="let type of pokemon.types">
+            <p [ngClass]="['card-text', type['type'].name, 'highlight']">{{ type["type"].name }}</p>
+        </div>
+    </div>
+</div>

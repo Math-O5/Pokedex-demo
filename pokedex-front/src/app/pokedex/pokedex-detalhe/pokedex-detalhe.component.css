@@ -1,0 +1,25 @@
+.highlight {
+    box-shadow: 1rem black;
+}
+
+.card-img-body {
+
+}
+
+.header {
+    display: flex;    
+    justify-content: space-between;
+    padding: 3rem;
+}
+
+.header.a {
+}
+
+.header img {
+    width: 10%;
+    text-align: center;
+}
+
+img {
+    width: 10%;
+}

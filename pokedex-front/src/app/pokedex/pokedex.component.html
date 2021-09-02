@@ -19,7 +19,7 @@
                     <h4 class="card-title">{{ pokemon.name }}</h4>
                     <p class="card-text">This card has supporting text below as a natural lead-in to additional content. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This card has supporting text below as a natural lead-in to additional content.</p>
                     <p class="card-text">{{pokemon.types[0]["type"].name}}</p>
-                    <a [routerLink]="['pokemon/', pokemon.id]" class="btn btn-primary">Detalhes</a>
+                    <a [routerLink]="['pokemon/', 'details']" [state]="{data: pokemon}" class="btn btn-primary">Detalhes</a>
                 </div>
             </div>
         </div>
